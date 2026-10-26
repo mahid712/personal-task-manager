@@ -1,0 +1,23 @@
+{
+  "name": "personal-task-manager",
+  "version": "1.0.0",
+  "description": "Full-stack Personal Task Manager (React + TypeScript + Vite + Bootstrap + Node.js + Express + MongoDB)",
+  "scripts": {
+    "server": "npm run start --prefix backend",
+    "server:dev": "npm run dev --prefix backend",
+    "client": "npm run dev --prefix frontend",
+    "client:build": "npm run build --prefix frontend",
+    "test:backend": "npm test --prefix backend"
+  },
+  "keywords": [
+    "mern",
+    "task-manager",
+    "react",
+    "typescript",
+    "vite",
+    "express",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "ISC"
+}

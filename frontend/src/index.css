@@ -1,0 +1,138 @@
+/* Import Bootstrap & Bootstrap Icons */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+:root {
+  --app-bg: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --primary-accent: #3b82f6;
+  --primary-gradient: linear-gradient(135deg, #2563eb, #1d4ed8);
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --card-hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--app-bg);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Utilities & Animations */
+.transition-all {
+  transition: all 0.2s ease-in-out;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Card Styling */
+.task-card {
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-hover-shadow);
+}
+
+.task-card.task-completed {
+  background-color: #fcfdfe;
+  opacity: 0.85;
+  border-left: 5px solid #10b981 !important;
+}
+
+.task-card.task-pending {
+  border-left: 5px solid #3b82f6;
+}
+
+.task-card.task-overdue {
+  border-left: 5px solid #ef4444 !important;
+  background-color: #fffaf0;
+}
+
+.task-completed .task-title {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+/* Priority Badges */
+.badge-priority-High {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+.badge-priority-Medium {
+  background-color: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+.badge-priority-Low {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+/* Category Badges */
+.badge-cat-College {
+  background-color: #ede9fe;
+  color: #6d28d9;
+}
+.badge-cat-Work {
+  background-color: #e0e7ff;
+  color: #3730a3;
+}
+.badge-cat-Personal {
+  background-color: #ccfbf1;
+  color: #0f766e;
+}
+.badge-cat-Other {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+/* Overdue Badge */
+.badge-overdue {
+  background-color: #fee2e2;
+  color: #dc2626;
+  font-weight: 600;
+  animation: pulse-danger 2s infinite;
+}
+
+@keyframes pulse-danger {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(239, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
