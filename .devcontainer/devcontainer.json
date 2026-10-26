@@ -1,0 +1,25 @@
+{
+  "name": "Personal Task Manager Dev Environment",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+  "forwardPorts": [3000, 5000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Frontend (React App)",
+      "onAutoForward": "openBrowser"
+    },
+    "5000": {
+      "label": "Backend (Express API)",
+      "onAutoForward": "silent"
+    }
+  },
+  "postCreateCommand": "cd backend && npm install && cd ../frontend && npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "mongodb.mongodb-vscode"
+      ]
+    }
+  }
+}
